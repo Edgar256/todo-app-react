@@ -12,25 +12,21 @@ class App extends React.Component {
       {
         id: uuid.v4(),
         task: 'Waking up',
-        time: '9:00am',
         completed: false
       },
       {
         id: uuid.v4(),
         task: 'Bathing and Cleaning up',
-        time: '9:30am',
         completed: true
       },
       {
         id: uuid.v4(),
         task: 'Taking breakfast',
-        time: '10:00am',
         completed: false
       },
       {
         id: uuid.v4(),
         task: 'Going to work',
-        time: '10:20am',
         completed: true
       },
     ]
