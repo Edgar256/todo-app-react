@@ -14,20 +14,12 @@ export default class TodoItem extends Component {
         const { id,task } = this.props.todo;
         
         return (
-            <div style={this.getStyle()}>
+            <div style={this.getStyle()} className="list">
                 <input type="checkbox" onChange={this.props.markComplete.bind(this,id)} /> { ' '}
                 {task}
-                <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>X</button>
+                <button onClick={this.props.delTodo.bind(this, id)} className="btnStyle">X</button>
             </div>
         )
     }
 }
-const btnStyle = {
-    background: 'ff0000',
-    color: 'fff',
-    border: 'none',
-    padding: '5px 10px',
-    borderRadius: '50%',
-    cursor: 'pointer',
-    // float: 'right'
-}
+
