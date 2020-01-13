@@ -7,15 +7,21 @@ export class AddTodo extends Component {
     }
 
     handleInput = (e) => this.setState({
-        task: e.target.value
-    })
+        [e.target.name] : e.target.value
+    });
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.addTodo(this.state.task);
+        this.setState({task: ' '})
+    }
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.onSubmit}>
                 <input 
                     type="text"
-                    nam="task"
+                    name="task"
                     placeholder="Add Task ..."
                     style={{flex:10, padding: '10px'}}
                     value={this.state.task}
@@ -23,7 +29,7 @@ export class AddTodo extends Component {
                 />
                 <input
                     type="submit"
-                    value="submit"
+                    value="Submit"
                     className="btn"
                     style={{flex:1, padding: '10px'}}
                 />
